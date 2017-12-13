@@ -1,5 +1,9 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import sass from 'rollup-plugin-sass';
+import postcss from 'postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import pkg from './package.json';
 
 export default [
@@ -12,6 +16,13 @@ export default [
     ],
     plugins: [
       resolve(),
+      sass({
+        output: 'lib/index.css',
+        processor: css =>
+          postcss([autoprefixer, cssnano])
+            .process(css)
+            .then(result => result.css)
+      }),
       babel({
         exclude: 'node_modules/**' // only transpile our source code
       })

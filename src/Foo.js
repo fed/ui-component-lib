@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Foo.css';
+import './Foo.scss';
 
 export default function Foo() {
   return (
