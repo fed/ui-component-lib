@@ -53,11 +53,13 @@
     "react-test-renderer": "^16.2.0",
     "rollup": "^0.52.1",
     "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-image": "^1.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sass": "^0.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "surge": "^0.19.0"
+    "surge": "^0.19.0",
+    "url-loader": "^0.6.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

@@ -4,6 +4,7 @@ import sass from 'rollup-plugin-sass';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import image from 'rollup-plugin-image';
 import pkg from './package.json';
 
 export default [
@@ -16,6 +17,7 @@ export default [
     ],
     plugins: [
       resolve(),
+      image(),
       sass({
         output: 'lib/index.css',
         processor: css =>
