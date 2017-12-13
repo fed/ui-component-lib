@@ -5,6 +5,7 @@ import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import url from 'rollup-plugin-url';
+import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
 export default [
@@ -12,8 +13,10 @@ export default [
     input: 'src/index.js',
     external: ['react'],
     output: [
-      { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      {
+        file: pkg.main,
+        format: 'cjs'
+      }
     ],
     plugins: [
       resolve(),
@@ -26,8 +29,9 @@ export default [
             .then(result => result.css)
       }),
       babel({
-        exclude: 'node_modules/**' // only transpile our source code
-      })
+        exclude: 'node_modules/**'
+      }),
+      uglify()
     ]
   }
 ];
