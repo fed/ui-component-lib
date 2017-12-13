@@ -18,7 +18,8 @@ export default [
     plugins: [
       resolve(),
       url({
-        limit: 2 * 1024 // inline files < 10k, copy files > 10k
+        limit: 2 * 1024, // inline files < 10k, copy files > 10k
+        publicPath: '/node_modules/isos-dashboard-ui/lib/'
       }),
       sass({
         output: 'lib/index.css',
