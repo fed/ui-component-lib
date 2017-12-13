@@ -1,12 +1,10 @@
-import { example } from './i18n/example';
-import Foo from './components/Foo/Foo';
+import i18n from './i18n';
 import Alert from './components/Alert/Alert';
 import Spinner from './components/Spinner/Spinner';
 import './index.scss';
 
 module.exports = {
-  example,
-  Foo,
+  i18n,
   Alert,
   Spinner
 };
