@@ -12,15 +12,12 @@ export default [
     input: 'src/index.js',
     external: ['react'],
     output: [
-      { file: pkg.main, format: 'cjs' }
-      // { file: pkg.module, format: 'es' }
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'es' }
     ],
     plugins: [
       resolve(),
-      url({
-        limit: 2 * 1024, // inline files < 10k, copy files > 10k
-        publicPath: '/node_modules/isos-dashboard-ui/lib/'
-      }),
+      url(),
       sass({
         output: 'lib/index.css',
         processor: css =>
