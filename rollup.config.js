@@ -4,7 +4,7 @@ import sass from 'rollup-plugin-sass';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import image from 'rollup-plugin-image';
+import url from 'rollup-plugin-url';
 import pkg from './package.json';
 
 export default [
@@ -17,7 +17,9 @@ export default [
     ],
     plugins: [
       resolve(),
-      image(),
+      url({
+        limit: 2 * 1024 // inline files < 10k, copy files > 10k
+      }),
       sass({
         output: 'lib/index.css',
         processor: css =>

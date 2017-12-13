@@ -1,10 +1,15 @@
 import React from 'react';
+import logo from './logo.jpg';
 import './Foo.scss';
 
 export default function Foo() {
   return (
     <div className="Foo">
-      I'm Foo! A sample component loaded via <a href="#">isos-dashboard-ui</a>
+      <p>
+        I'm Foo! A sample component loaded via <a href="#">ui-lib</a>
+      </p>
+
+      <img src={logo} alt="" />
     </div>
   );
 }
