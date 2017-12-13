@@ -1,0 +1,20 @@
+/*
+ * Normalize.css makes browsers render all elements
+ * more consistently and in line with modern standards.
+ * It precisely targets only the styles that need normalising.
+ */
+@import url('https://necolas.github.io/normalize.css/7.0.0/normalize.css');
+
+/*
+ * Typography.
+ */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+/*
+ * Global styles.
+ */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
